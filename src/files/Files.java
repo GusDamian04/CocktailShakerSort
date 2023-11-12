@@ -97,37 +97,7 @@ public class Files {
 
     }
 
-    public  void writeKeyboardToFile(String name) throws IOException {
-        // un apuntador a un espacio fisico del disco duro
-        FileWriter archivo;
-        // La llave de acceso para escribir el archivo
-        PrintWriter writer;
-        // Para escribir el teclado al dd
-        BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
-        String entrada;
-        char respuesta;
-
-        try {
-            // Apuntador al archivo que se va a crear
-            archivo = new FileWriter("C:\\archivos\\" + name + ".txt");
-            // Abrir el archivo en modo escritura
-            writer = new PrintWriter(archivo);
-            do {
-                System.out.println("Escribe datos para guardar el archivo");
-                entrada = bufer.readLine();
-                // Guardar lo recuperado desde teclado al archivo
-                writer.println(entrada);
-                System.out.println("Escribe x para salir, cualquier otra tecla para continuar: ");
-                entrada = bufer.readLine();
-                respuesta = entrada.charAt(0);
-            } while (respuesta != 'x');
-            archivo.close();
-        } catch (Exception e) {
-            System.out.println("Error al escribir el archivo " + e.toString());
-        }
-    }
     // Craer un archivo con informacion de un arreglo
-
     public  void writeArrayToFile(String name, int[] array) throws IOException {
         FileWriter archivo;
         PrintWriter writer;
