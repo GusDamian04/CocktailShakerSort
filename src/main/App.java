@@ -28,7 +28,6 @@ public class App {
 
         // Contruyendo el arreglo
         int[] arreglo = new int[size];
-
-        imprimirArreglo(arreglo);
+        
     }
 }
