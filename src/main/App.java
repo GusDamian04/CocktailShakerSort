@@ -1,11 +1,11 @@
 package main;
 
 import methods.Methods;
+import files.Files;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
         Methods methods = new Methods();
-        
+        Files files = new Files();
     }
 }
