@@ -2,11 +2,13 @@ package methods;
 
 public class Methods {
 
+    // Metodo para imprimir Arreglo
     public void imprimirArreglo(int[] arreglo){
         for(int unDato : arreglo)
             System.out.print("   " + unDato + "   ");
     }
 
+    // Metodo para ordenar el arreglo
     public int[] cocktailShakerSort(int[] arreglo){
         boolean cambios;
         int auxiliar;

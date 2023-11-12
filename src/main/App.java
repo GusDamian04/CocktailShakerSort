@@ -29,5 +29,13 @@ public class App {
         // Contruyendo el arreglo
         int[] arreglo = new int[size];
         
+        // Imprimiendo el arreglo
+        methods.imprimirArreglo(arreglo);
+
+        // Metodo Cocktail Shaker Sort
+        methods.cocktailShakerSort(arreglo);
+
+        //Imprimiendo el arreglo ordenado
+        methods.imprimirArreglo(arreglo);
     }
 }
