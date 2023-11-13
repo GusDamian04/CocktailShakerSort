@@ -16,7 +16,7 @@ El Cocktail Shaker Sort, también conocido como bidirectional bubble sort, shake
    - Mueve el índice hacia la izquierda.
 
 3. *Repeticion:*
-   - Estos dos pasos se repetira las veces necesarias hasta tener los datos organizados.
+   - Estos dos pasos se repetira las veces que sean necesarias hasta tener los datos organizados.
 
 ## Ejemplo
 
