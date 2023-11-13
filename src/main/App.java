@@ -5,7 +5,7 @@ import methods.Methods;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-import files.Files;
+//import files.Files;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -15,65 +15,29 @@ public class App {
 
         // Importando los archivos Methods y Files
         Methods methods = new Methods();
-        Files files = new Files();
+        //Files files = new Files();
+        // Declarando variables
+        int size;
 
-        // Opcion de Escribir el arreglo o Leerlo en un archivo
-        System.out.println("Metodo de ordenamiento Cocktail Shaker sort");
-        System.out.println("-o-o-o-o-o Menu -o-o-o-o-o");
-        System.out.println("Escribir Arreglo..........1");
-        System.out.println("Leer Arreglo..............2");
-        System.out.println("Leer Arreglo..............3");
-        System.out.println("-o-o-o-o-o-o-o-o-o-o-o-o-o");
-        System.out.print("->" );
+        // Solicitando el tamaño del arreglo
+        System.out.println("Escribe el tamaño del arreglo");
         entrada = bufer.readLine();
-        int opcion = Integer.parseInt(entrada);
+        size = Integer.parseInt(entrada);
 
-        switch (opcion) {
-            case 1:
-                // Declarando variables
-                int size;
-
-                // Solicitando el tamaño del arreglo
-                System.out.println("Escribe el tamaño del arreglo");
-                entrada = bufer.readLine();
-                size = Integer.parseInt(entrada);
-
-                // Contruyendo el arreglo
-                int[] arreglo = new int[size];
+        // Contruyendo el arreglo
+        int[] arreglo = new int[size];
                 
-                // Imprimiendo el arreglo
-                methods.imprimirArreglo(arreglo);
+        // Lectura de arreglo
+        arreglo = methods.leerArreglo(arreglo);
 
-                // Metodo Cocktail Shaker Sort
-                methods.cocktailShakerSort(arreglo);
+        // Imprimiendo el arreglo
+        methods.imprimirArreglo(arreglo);
 
-                //Imprimiendo el arreglo ordenado
-                methods.imprimirArreglo(arreglo);
-                break;
-            case 2:
-                // Declaracion de variables
-                int lines;
-                String fileName;
+        // Metodo Cocktail Shaker Sort
+        methods.cocktailShakerSort(arreglo);
 
-                System.out.println("Escribe el nombre del archivo: ");
-                fileName = bufer.readLine();
-                lines = files.countFileLines(fileName);
-                
-                // Declaracion de Arreglo
-                int[] array = new int[lines];
-
-                // Imprimir el arreglo
-                methods.imprimirArreglo(array);
-                
-                // Metodo Cocktail Shaker Sort
-                methods.cocktailShakerSort(array);
-
-                //Imprimiendo el arreglo ordenado
-                methods.imprimirArreglo(array);
-            default:
-                break;
-        }
-
-        
+        //Imprimiendo el arreglo ordenado
+        System.out.println("Arreglo ordenado");
+        methods.imprimirArreglo(arreglo);        
     }
 }
