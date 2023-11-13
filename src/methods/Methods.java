@@ -26,7 +26,7 @@ public class Methods {
             }
             // Segundo paso de derecha a izquierda
             for(int i = arreglo.length - 1; i > 0; i--){
-                if(arreglo[i] > arreglo[i +1]){
+                if(arreglo[i] > arreglo[i - 1]){
                     auxiliar = arreglo[i];
                     arreglo[i] = arreglo[i + 1];
                     arreglo[i + 1] = auxiliar;
