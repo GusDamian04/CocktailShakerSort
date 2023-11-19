@@ -21,75 +21,79 @@ public class App {
         int opcion;
         int size;
 
-        // Menu de opciones
-        System.out.println("Metodo de ordenamiento Cocktail Shaker Sort");
-        System.out.println("-o-o-o-o-o-o-Menu-o-o-o-o-o-o-");
-        System.out.println("Escribir arreglo.............1");
-        System.out.println("Leer arreglo.................2");
-        System.out.println("-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o");
-        System.out.print("Opcion -> ");
-        entrada = bufer.readLine();
-        opcion = Integer.parseInt(entrada);
+        do{
+            // Menu de opciones
+            System.out.println("Metodo de ordenamiento Cocktail Shaker Sort");
+            System.out.println("-o-o-o-o-o-o-Menu-o-o-o-o-o-o-");
+            System.out.println("Escribir arreglo.............1");
+            System.out.println("Leer arreglo.................2");
+            System.out.println("Salir........................3");
+            System.out.println("-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o");
+            System.out.print("Opcion -> ");
+            entrada = bufer.readLine();
+            opcion = Integer.parseInt(entrada);
 
-        switch (opcion) {
-            case 1:
-                // Solicitando el tamaño del arreglo
-                System.out.println("Escribe el tamaño del arreglo");
-                entrada = bufer.readLine();
-                size = Integer.parseInt(entrada);
+            switch (opcion) {
+                case 1:
+                    // Solicitando el tamaño del arreglo
+                    System.out.println("Escribe el tamaño del arreglo");
+                    entrada = bufer.readLine();
+                    size = Integer.parseInt(entrada);
 
-                // Contruyendo el arreglo
-                int[] arreglo = new int[size];
-                        
-                // Lectura de arreglo
-                arreglo = methods.leerArreglo(arreglo);
+                    // Contruyendo el arreglo
+                    int[] arreglo = new int[size];
+                            
+                    // Lectura de arreglo
+                    arreglo = methods.leerArreglo(arreglo);
+
+                    // Imprimiendo el arreglo
+                    methods.imprimirArreglo(arreglo);
+
+                    // Metodo Cocktail Shaker Sort
+                    methods.cocktailShakerSort(arreglo);
+
+                    //Imprimiendo el arreglo ordenado
+                    System.out.println(".............Arreglo ordenado.............");
+                    methods.imprimirArreglo(arreglo);
+                    break;
+                case 2:
+                    // Declaracion de variables locales
+                    String fileName;
+
+                    // Escribiendo nombre del archivo
+                    System.out.println("Escribe el nombre del archivo: ");
+                    fileName = bufer.readLine();
+
+                    // Construyendo el arreglo
+                    size = files.countFileLines(fileName);
+                    int[] array = new int[size];
+
+                    // Almazenando los datos en el arreglo
+                    array = files.fileToIntArray(fileName);
 
                 // Imprimiendo el arreglo
-                methods.imprimirArreglo(arreglo);
+                    methods.imprimirArreglo(array);
 
-                // Metodo Cocktail Shaker Sort
-                methods.cocktailShakerSort(arreglo);
+                    // Metodo Cocktail Shaker Sort
+                    methods.cocktailShakerSort(array);
 
-                //Imprimiendo el arreglo ordenado
-                System.out.println(".............Arreglo ordenado.............");
-                methods.imprimirArreglo(arreglo);
-                break;
-            case 2:
-                // Declaracion de variables locales
-                String fileName;
+                    //Imprimiendo el arreglo ordenado
+                    System.out.println(".............Arreglo ordenado.............");
+                    methods.imprimirArreglo(array);
 
-                // Escribiendo nombre del archivo
-                System.out.println("Escribe el nombre del archivo: ");
-                fileName = bufer.readLine();
-
-                // Construyendo el arreglo
-                size = files.countFileLines(fileName);
-                int[] array = new int[size];
-
-                // Almazenando los datos en el arreglo
-                array = files.fileToIntArray(fileName);
-
-               // Imprimiendo el arreglo
-                methods.imprimirArreglo(array);
-
-                // Metodo Cocktail Shaker Sort
-                methods.cocktailShakerSort(array);
-
-                //Imprimiendo el arreglo ordenado
-                System.out.println(".............Arreglo ordenado.............");
-                methods.imprimirArreglo(array);
-
-                // Guardando arvhivo
-                System.out.println("Escribe el nombre del archivo al guardar: ");
-                fileName = bufer.readLine();
-                files.writeArrayToFile(fileName, array);
-                System.out.println("Archivo guardado con exito...");
-                break;
-            default:
-                break;
+                    // Guardando arvhivo
+                    System.out.println("Escribe el nombre del archivo al guardar: ");
+                    fileName = bufer.readLine();
+                    files.writeArrayToFile(fileName, array);
+                    System.out.println("Archivo guardado con exito...");
+                    break;
+                    case 3:
+                        System.out.println("Saliendo...");
+                        System.exit(0);
+                default:
+                    break;
         }
-
-        
-                
+        }while(opcion != 3);
+         
     }
 }
