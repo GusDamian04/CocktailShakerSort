@@ -3,6 +3,8 @@
 
 El Cocktail Shaker Sort, también conocido como bidirectional bubble sort, shaker sort, ripple sort, o shuttle sort, es un algoritmo de ordenamiento que mejora el rendimiento del Bubble Sort al ordenar los elementos en ambas direcciones, de izquierda a derecha y viceversa. Esto ayuda a reducir el número de iteraciones necesarias para organizar la lista.
 
+El método Cocktail Shaker sort tiene una complejidad de tiempo de O(n^2) en el peor caso, y de O(n) en el mejor caso, cuando el arreglo ya está ordenado. Es un método de ordenamiento estable, que mantiene el orden relativo de los elementos iguales.
+
 ## Cómo funciona
 
 1. *Primer paso:*
